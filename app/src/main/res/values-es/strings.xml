@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rueda Dado</string>
+    <string name="roll">Rodar</string>
+    //añadido el español
+</resources>

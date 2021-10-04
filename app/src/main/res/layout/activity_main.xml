@@ -36,5 +36,5 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/roll"
         android:id="@+id/roll_button" />
-
+    //strings cambiada en el layout
 </LinearLayout>
