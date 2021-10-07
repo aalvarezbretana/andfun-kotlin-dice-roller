@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun rollDice() {
+    /*private fun rollDice() {
         val randomInt = Random().nextInt(6) + 1
         val drawableResource = when (randomInt) {
             1 -> R.drawable.tomioka
@@ -48,6 +48,18 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.zenitsu
         }
         diceImage.setImageResource(drawableResource)
+    }*/
+    private fun rollDice() {
+        val random1 = (1..6).shuffled().last()
+        val drawableResource = when (random1) {
+            1 -> R.drawable.tomioka
+            2 -> R.drawable.tanjiro
+            3 -> R.drawable.inosuke
+            4 -> R.drawable.nezuko
+            5 -> R.drawable.rengoku
+            else -> R.drawable.zenitsu
+        }
+        diceImage.setImageResource(drawableResource)
     }
-
+    // añadido un nuevo método random
 }
