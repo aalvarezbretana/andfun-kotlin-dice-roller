@@ -36,9 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/roll"
-        app:icon="@drawable/baseline_fingerprint_24"
+        app:icon="@drawable/baseline_touch_app_24"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
-        <!-- añadido el icono en el botón -->
+        <!-- cambiado el icono en el botón -->
         <!-- añadido el estilo en el botón -->
     //strings cambiada en el layout
 </LinearLayout>
