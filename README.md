@@ -102,3 +102,49 @@ You can also compare your code locally with the branch of the following step.
 
 ## Report Issues
 Notice any issues with a repository? Please file a [github issue](https://github.com/udacity/andfun-kotlin-dice-roller/issues) in this repository.
+
+## Utilizar strings.xml según idomas y cambiar strings en el layout
+
+Clic derecho en values, New > Values Resource Files, después File Name: strings, después abajo locale >>, seleccionamos el idioma que queremos, por ejemplo, Español, y como código:
+<resources>
+<string name="app_name">Rueda Dado</string>
+<string name="roll">Rodar</string>
+//añadido el español
+</resources>, que son las mismas etiquetas que el idioma predeterminado, para así cambiarlas al escoger el idioma.
+En activiy_main donde aparece android:text= escribimos android:text="@string/roll" para hacer un llamamiento al atributo y que siempre que cambiemos el idioma del teléfono que se cambie el del botón.
+
+https://github.com/aalvarezbretana/andfun-kotlin-dice-roller/commit/f91dbe3c418e1039718f42a42760229ef106cd8a
+
+## Cambiar las imágenes en drawable
+
+Copiamos las imágenes que queramos en la carpeta drawable y modificamos el MainActivity donde hemos llamado a las imágenes anteriores por las nuevas.
+
+https://github.com/aalvarezbretana/andfun-kotlin-dice-roller/commit/e0c8678f0580d7d716b11f4f46b8e6ab346e5e14
+
+## Cambiar la función random por algo similar
+
+Modifiqué el .random() del proyecto por .shuffled() mediante este código.
+private fun rollDice() {
+val random1 = (1..6).shuffled().last()
+val drawableResource = when (random1) {
+1 -> R.drawable.tomioka
+2 -> R.drawable.tanjiro
+3 -> R.drawable.inosuke
+4 -> R.drawable.nezuko
+5 -> R.drawable.rengoku
+else -> R.drawable.zenitsu
+}
+diceImage.setImageResource(drawableResource)
+}
+
+https://github.com/aalvarezbretana/andfun-kotlin-dice-roller/commit/5bf62cdde7052d2ea19f50f158bc15a9d353bc10
+
+## Modificar el boton para usar material.io y que tenga asociado un icono
+
+Primero debemos implentar en el gradle(Module) con este código en dependencies: implementation 'com.google.android.material:material:1.4.0'
+En styles.xml modificamos el pattern del AppTheme, debe quedar algo como esto: parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+después en activity_main.xml añadimos tanto el estilo como el icono dentro del botón con este código:
+app:icon="@drawable/baseline_touch_app_24"
+style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+https://github.com/aalvarezbretana/andfun-kotlin-dice-roller/commit/460b15fa81e1a66c889af35a1892364f16f59844
